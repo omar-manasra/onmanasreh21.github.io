@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>158167 - Contact Omar Manasra</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+
+    <main>
+
+        <h1>Contact Me</h1>
+
+        <p>
+            If you would like to contact me, please complete
+            the form below.
+        </p>
+
+        <form id="contactForm">
+
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName"
+                   name="fullName" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email"
+                   name="email" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country"
+                   name="country" required>
+
+            <label for="comments">Comments:</label>
+            <textarea id="comments"
+                      name="comments"
+                      rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Omar Manasra | Personal Portfolio</p>
+    </footer>
+
+    <script>
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const fullName = document.getElementById("fullName").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const country = document.getElementById("country").value.trim();
+            const comments = document.getElementById("comments").value.trim();
+
+            if (!fullName || !email || !country || !comments) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            alert("Your form was submitted successfully!");
+
+            contactForm.reset();
+        });
+    </script>
+
+</body>
+</html>
