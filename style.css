@@ -1,21 +1,43 @@
 
-/* =================================
-   OMAR MANASRA - CYBER PORTFOLIO
-   Modern Dark Tech Design
-================================= */
+/* =========================================
+   OMAR MANASRA - PROFESSIONAL PORTFOLIO
+   Dark Navy & Cyan Theme
+========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   1. ROOT VARIABLES
+========================================= */
 
 :root {
-    --bg: #080f1c;
-    --surface: #111d2d;
-    --surface-light: #17283b;
-    --accent: #39dbc6;
-    --accent-blue: #62a9ff;
-    --text: #edf5ff;
-    --muted: #9aadc2;
-    --border: rgba(150, 190, 220, 0.15);
+    --bg: #07111F;
+    --bg-secondary: #0B1727;
+
+    --surface: #101E30;
+    --surface-light: #172A40;
+
+    --accent: #38BDF8;
+    --accent-hover: #7DD3FC;
+    --accent-blue: #60A5FA;
+
+    --text: #F1F5F9;
+    --muted: #94A3B8;
+
+    --border: rgba(148, 163, 184, 0.16);
+
+    --shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3);
+
+    --radius: 16px;
 }
+
+
+/* =========================================
+   2. RESET & GENERAL
+========================================= */
 
 * {
     margin: 0;
@@ -29,268 +51,522 @@ html {
 
 body {
     background:
-        radial-gradient(ellipse at 15% 10%, rgba(36, 117, 145, 0.17), transparent 40%),
-        radial-gradient(ellipse at 90% 65%, rgba(46, 91, 160, 0.12), transparent 40%),
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(56, 189, 248, 0.09),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(96, 165, 250, 0.07),
+            transparent 35%
+        ),
         var(--bg);
 
     color: var(--text);
+
     font-family: 'Inter', sans-serif;
+
     line-height: 1.8;
+
     min-height: 100vh;
 }
 
-/* NAVIGATION */
+a {
+    transition: all 0.3s ease;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   3. NAVIGATION BAR
+========================================= */
 
 nav {
     display: flex;
+
     justify-content: center;
     align-items: center;
-    gap: 45px;
+
+    flex-wrap: wrap;
+
+    gap: 42px;
+
     padding: 20px;
-    background: rgba(8, 15, 28, 0.88);
+
+    background: rgba(7, 17, 31, 0.92);
+
     border-bottom: 1px solid var(--border);
+
     position: sticky;
     top: 0;
+
     z-index: 100;
-    backdrop-filter: blur(15px);
+
+    backdrop-filter: blur(18px);
 }
 
 nav a {
     color: var(--muted);
+
     text-decoration: none;
+
     font-size: 14px;
+
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: 0.3s;
+
+    letter-spacing: 0.4px;
+
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+    height: 2px;
+
+    bottom: -7px;
+    left: 0;
+
+    background: var(--accent);
+
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: var(--accent);
 }
 
-/* MAIN CONTAINER */
-
-main {
-    width: 88%;
-    max-width: 1100px;
-    margin: 55px auto;
-    padding: 55px;
-    background: rgba(17, 29, 45, 0.82);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+nav a:hover::after {
+    width: 100%;
 }
 
-/* MAIN HEADING */
+
+/* =========================================
+   4. MAIN CONTAINER
+========================================= */
+
+main {
+    width: 90%;
+
+    max-width: 1050px;
+
+    margin: 50px auto;
+
+    padding: 55px;
+
+    background: rgba(16, 30, 48, 0.93);
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    animation: fadeIn 0.8s ease;
+}
+
+
+/* =========================================
+   5. HEADINGS
+========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', sans-serif;
+}
 
 h1 {
-    font-size: clamp(32px, 5vw, 52px);
+    font-size: clamp(34px, 5vw, 54px);
+
     font-weight: 800;
-    letter-spacing: -2px;
-    line-height: 1.2;
-    margin-bottom: 25px;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1.25;
+
+    margin-bottom: 22px;
+
     color: var(--text);
 }
 
 h1::after {
     content: ".";
+
     color: var(--accent);
 }
 
-/* SECTION HEADINGS */
-
 h2 {
-    font-size: 23px;
-    margin-top: 42px;
-    margin-bottom: 20px;
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-top: 45px;
+
+    margin-bottom: 22px;
+
+    padding-bottom: 13px;
+
     color: var(--text);
+
     border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
+
+    position: relative;
 }
 
+h2::after {
+    content: "";
 
+    position: absolute;
+
+    bottom: -1px;
+    left: 0;
+
+    width: 65px;
+    height: 2px;
+
+    background: var(--accent);
+}
+
+h3 {
+    color: var(--accent);
+
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
 
 p {
     color: var(--muted);
-    margin-bottom: 15px;
+
+    margin-bottom: 16px;
 }
 
-/* PROFILE PHOTO */
+
+/* =========================================
+   6. PROFILE PHOTO
+========================================= */
 
 .profile-photo {
     display: block;
-    width: 190px;
-    height: 190px;
+
+    width: 200px;
+    height: 200px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     margin: 30px auto;
+
     border: 3px solid var(--accent);
+
     padding: 5px;
-    box-shadow: 0 0 30px rgba(57, 219, 198, 0.18);
-    transition: transform 0.3s, box-shadow 0.3s;
+
+    background: var(--surface);
+
+    box-shadow:
+        0 0 0 8px rgba(56, 189, 248, 0.05),
+        0 0 35px rgba(56, 189, 248, 0.2);
+
+    transition: all 0.4s ease;
 }
 
 .profile-photo:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 40px rgba(57, 219, 198, 0.35);
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 0 12px rgba(56, 189, 248, 0.06),
+        0 0 45px rgba(56, 189, 248, 0.3);
 }
 
-/* SOFT SKILLS */
+
+/* =========================================
+   7. SOFT SKILLS
+========================================= */
 
 ul {
     list-style: none;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    margin: 20px 0;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(190px, 1fr));
+
+    gap: 14px;
+
+    margin: 25px 0;
 }
 
 ul li {
-    background: var(--surface-light);
-    padding: 14px 18px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--surface-light),
+            var(--surface)
+        );
+
+    padding: 16px 20px;
+
     border: 1px solid var(--border);
-    border-radius: 10px;
+
+    border-radius: 12px;
+
     color: var(--text);
-    transition: 0.3s;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all 0.3s ease;
 }
 
 ul li::before {
     content: "✦ ";
+
     color: var(--accent);
+
+    font-size: 16px;
 }
 
 ul li:hover {
     border-color: var(--accent);
-    transform: translateY(-4px);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(56, 189, 248, 0.08);
 }
 
-/* TECHNOLOGY TABLE */
+
+/* =========================================
+   8. TECHNOLOGY TABLE
+========================================= */
 
 table {
     width: 100%;
+
     border-collapse: separate;
+
     border-spacing: 0;
-    margin: 25px 0;
+
+    margin: 28px 0;
+
     overflow: hidden;
+
     border: 1px solid var(--border);
-    border-radius: 12px;
+
+    border-radius: 14px;
+
+    background: var(--surface);
 }
 
 th {
-    background: #1b344a;
+    background: #172F49;
+
     color: var(--accent);
+
     text-align: left;
+
     padding: 18px;
+
     font-size: 14px;
-    letter-spacing: 1px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
 
 td {
     padding: 17px 18px;
+
     border-top: 1px solid var(--border);
+
     color: var(--muted);
+
+    font-size: 14px;
 }
 
-tr {
-    transition: background 0.3s;
+tbody tr {
+    transition: background 0.3s ease;
 }
 
-tbody tr:hover,
-tr:hover td {
-    background: rgba(57, 219, 198, 0.06);
+tbody tr:hover {
+    background: rgba(56, 189, 248, 0.07);
 }
 
 td a {
     color: var(--accent);
+
     font-weight: 600;
+
     text-decoration: none;
 }
 
 td a:hover {
-    color: white;
+    color: var(--accent-hover);
+
     text-decoration: underline;
 }
 
-/* EMAIL LINK */
+
+/* =========================================
+   9. EMAIL LINK
+========================================= */
 
 a[href^="mailto"] {
     color: var(--accent);
+
     text-decoration: none;
+
+    font-weight: 600;
 }
 
 a[href^="mailto"]:hover {
+    color: var(--accent-hover);
+
     text-decoration: underline;
 }
 
-/* CONTACT FORM */
+
+/* =========================================
+   10. CONTACT FORM
+========================================= */
 
 form {
     max-width: 650px;
-    margin: 30px auto 0;
+
+    margin: 35px auto;
+
+    padding: 32px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
 }
 
 form label {
     display: block;
-    margin: 18px 0 7px;
+
+    margin: 20px 0 8px;
+
     color: var(--text);
+
     font-size: 14px;
+
     font-weight: 600;
 }
 
 form input,
-form textarea {
+form textarea,
+form select {
     display: block;
+
     width: 100%;
+
     padding: 14px 16px;
-    background: #0b1726;
+
+    background: #091525;
+
     color: var(--text);
+
     border: 1px solid var(--border);
-    border-radius: 9px;
-    font-family: 'Inter', sans-serif;
+
+    border-radius: 10px;
+
     font-size: 15px;
+
     outline: none;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #64748B;
 }
 
 form input:focus,
-form textarea:focus {
+form textarea:focus,
+form select:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(57, 219, 198, 0.1);
+
+    box-shadow:
+        0 0 0 3px rgba(56, 189, 248, 0.12);
 }
 
 form textarea {
-    min-height: 140px;
+    min-height: 145px;
+
     resize: vertical;
 }
 
 form button {
     display: inline-block;
-    margin-top: 22px;
-    padding: 13px 35px;
+
+    margin-top: 25px;
+
+    padding: 14px 38px;
+
     background: var(--accent);
-    color: #07131c;
+
+    color: #07111F;
+
     border: none;
-    border-radius: 8px;
+
+    border-radius: 10px;
+
     font-size: 15px;
+
     font-weight: 800;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
 }
 
 form button:hover {
-    background: #8af4e5;
+    background: var(--accent-hover);
+
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(57, 219, 198, 0.2);
+
+    box-shadow:
+        0 10px 25px rgba(56, 189, 248, 0.2);
 }
 
-/* FOOTER */
+form button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   11. FOOTER
+========================================= */
 
 footer {
     text-align: center;
+
     padding: 30px 15px;
+
     border-top: 1px solid var(--border);
+
     margin-top: 60px;
+
     color: var(--muted);
+
     font-size: 13px;
 }
 
@@ -298,54 +574,201 @@ footer p {
     margin: 0;
 }
 
-/* RESPONSIVE DESIGN */
+
+/* =========================================
+   12. SELECTION COLOR
+========================================= */
+
+::selection {
+    background: var(--accent);
+
+    color: var(--bg);
+}
+
+
+/* =========================================
+   13. SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #29445E;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+
+/* =========================================
+   14. ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   15. TABLET RESPONSIVE
+========================================= */
 
 @media (max-width: 768px) {
 
     nav {
-        gap: 25px;
-        padding: 16px 10px;
+        gap: 22px;
+
+        padding: 17px 12px;
+    }
+
+    nav a {
+        font-size: 13px;
     }
 
     main {
         width: 94%;
-        padding: 25px 18px;
+
+        padding: 28px 22px;
+
         margin: 25px auto;
     }
 
     h1 {
-        font-size: 34px;
+        font-size: 36px;
+
         letter-spacing: -1px;
     }
 
     h2 {
-        font-size: 20px;
-    }
-
-    table {
-        font-size: 13px;
-    }
-
-    th, td {
-        padding: 12px 9px;
+        font-size: 21px;
     }
 
     .profile-photo {
-        width: 155px;
-        height: 155px;
+        width: 165px;
+        height: 165px;
     }
 
     ul {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    th,
+    td {
+        padding: 13px 11px;
+    }
+
+    form {
+        padding: 23px;
     }
 }
 
-@media (max-width: 400px) {
+
+/* =========================================
+   16. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 480px) {
+
     nav {
-        gap: 16px;
+        gap: 15px;
+
+        padding: 15px 8px;
     }
 
     nav a {
         font-size: 12px;
     }
+
+    main {
+        width: 95%;
+
+        padding: 22px 16px;
+
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 19px;
+
+        margin-top: 35px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .profile-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: nowrap;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+
+        font-size: 12px;
+    }
+
+    form {
+        padding: 18px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        font-size: 14px;
+    }
+
+    form button {
+        width: 100%;
+    }
 }
+
+
+/* =========================================
+   17. REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
